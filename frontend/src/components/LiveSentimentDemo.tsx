@@ -25,14 +25,14 @@ const LiveSentimentDemo = () => {
   });
 
   const sampleMessages = [
-    { customer: "Sarah J.", message: "This service is absolutely terrible! I've been waiting for hours!", emotion: "negative", severity: "high" },
-    { customer: "Mike C.", message: "Thanks for the quick response, really appreciate it!", emotion: "positive", severity: "low" },
-    { customer: "Emma D.", message: "I'm confused about how this works, can you help?", emotion: "neutral", severity: "medium" },
-    { customer: "John B.", message: "I'm getting really frustrated with these constant errors!", emotion: "negative", severity: "high" },
-    { customer: "Lisa M.", message: "Great product, exactly what I needed!", emotion: "positive", severity: "low" },
-    { customer: "Tom R.", message: "Is there a way to change my subscription?", emotion: "neutral", severity: "low" },
-    { customer: "Anna K.", message: "This is the worst experience I've ever had!", emotion: "negative", severity: "high" },
-    { customer: "Chris L.", message: "Outstanding customer service, thank you!", emotion: "positive", severity: "low" },
+    { customer: "Anjali J.", message: "This service is absolutely terrible! I've been waiting for hours!", emotion: "negative", severity: "high" },
+    { customer: "Rohan C.", message: "Thanks for the quick response, really appreciate it!", emotion: "positive", severity: "low" },
+    { customer: "Priya D.", message: "I'm confused about how this works, can you help?", emotion: "neutral", severity: "medium" },
+    { customer: "Sanjay B.", message: "I'm getting really frustrated with these constant errors!", emotion: "negative", severity: "high" },
+    { customer: "Kavya M.", message: "Great product, exactly what I needed!", emotion: "positive", severity: "low" },
+    { customer: "Vikram R.", message: "Is there a way to change my subscription?", emotion: "neutral", severity: "low" },
+    { customer: "Neha K.", message: "This is the worst experience I've ever had!", emotion: "negative", severity: "high" },
+    { customer: "Rajesh L.", message: "Outstanding customer service, thank you!", emotion: "positive", severity: "low" },
   ];
 
   useEffect(() => {
