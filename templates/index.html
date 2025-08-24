@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Sentiment Watchdog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1>Customer Sentiment Watchdog</h1>
+        </header>
+
+        <!-- Main Content -->
+        <div class="dashboard-content">
+            <!-- Left Column - Live Feed -->
+            <div class="live-feed">
+                <h2>Live Customer Messages</h2>
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will be loaded here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Right Column - Analytics -->
+            <div class="analytics-sidebar">
+                <!-- Speedometer -->
+                <div class="speedometer-container">
+                    <h2>Overall Sentiment</h2>
+                    <div class="speedometer">
+                        <div class="gauge">
+                            <div class="needle" id="needle"></div>
+                        </div>
+                        <div class="score" id="sentimentScore">0.0</div>
+                    </div>
+                </div>
+
+                <!-- Channel Analytics -->
+                <div class="channel-analytics">
+                    <h2>Channel Breakdown</h2>
+                    <div class="channel-stats">
+                        <div class="channel-stat">
+                            <h3>Gmail</h3>
+                            <p>✅ Positive: <span id="gmailPositive">0</span></p>
+                            <p>❌ Negative: <span id="gmailNegative">0</span></p>
+                            <p>⚪ Neutral: <span id="gmailNeutral">0</span></p>
+                        </div>
+                        <div class="channel-stat">
+                            <h3>Chat</h3>
+                            <p>✅ Positive: <span id="chatPositive">0</span></p>
+                            <p>❌ Negative: <span id="chatNegative">0</span></p>
+                            <p>⚪ Neutral: <span id="chatNeutral">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

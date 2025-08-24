@@ -1,46 +1,50 @@
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for
-from flask_cors import CORS
-from config import Config
-from utils.database import init_db, get_db
-from utils.mock_data import generate_mock_data
+from flask import Flask, render_template, jsonify
+from pymongo import MongoClient
+from dotenv import load_dotenv
 import os
+import google.generativeai as genai
 
+load_dotenv()
 
-def create_app():
-    app = Flask(__name__)
-    app.config.from_object(Config)
+app = Flask(__name__)
 
-    # Enable CORS
-    CORS(app)
+# MongoDB Setup
+client = MongoClient(os.getenv('MONGODB_URI'))
+db = client.sentiment_watchdog
+messages_collection = db.messages
 
-    # Initialize database
-    init_db()
+# Gemini AI Setup
+genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
+model = genai.GenerativeModel('gemini-pro')
 
-    # Register blueprints
-    from routes.auth import auth_bp
-    from routes.dashboard import dashboard_bp
-    from routes.api import api_bp
+def analyze_sentiment_gemini(text):
+    try:
+        prompt = f"Analyze this customer message sentiment. Return ONLY a JSON format: {{sentiment: 'positive/negative/neutral', score: 0.0-1.0, emotion: 'angry/happy/frustrated/etc'}}\n\nMessage: {text}"
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return {'sentiment': 'neutral', 'score': 0.0, 'emotion': 'unknown'}
 
-    app.register_blueprint(auth_bp, url_prefix='/auth')
-    app.register_blueprint(dashboard_bp, url_prefix='/dashboard')
-    app.register_blueprint(api_bp, url_prefix='/api')
+@app.route('/')
+def dashboard():
+    return render_template('index.html')
 
-    @app.route('/')
-    def index():
-        return render_template('index.html')
+@app.route('/api/messages')
+def get_messages():
+    messages = list(messages_collection.find({}).sort('timestamp', -1).limit(50))
+    # Convert ObjectId to string for JSON serialization
+    for msg in messages:
+        msg['_id'] = str(msg['_id'])
+    return jsonify(messages)
 
-    @app.route('/setup-demo')
-    def setup_demo():
-        """Generate mock data for demo purposes"""
-        try:
-            generate_mock_data()
-            return jsonify({"message": "Demo data generated successfully!"})
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-
-    return app
-
+@app.route('/api/analytics')
+def get_analytics():
+    # Mock analytics data - we'll implement real aggregation later
+    analytics = {
+        'gmail': {'positive': 90, 'negative': 20, 'neutral': 20},
+        'chat': {'positive': 10, 'negative': 20, 'neutral': 20}
+    }
+    return jsonify(analytics)
 
 if __name__ == '__main__':
-    app = create_app()
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True)
