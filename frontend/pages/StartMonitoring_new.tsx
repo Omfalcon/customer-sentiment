@@ -32,7 +32,7 @@ const StartMonitoring = () => {
   useEffect(() => {
     const checkEmailConfig = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/email-config');
+        const response = await fetch(`http://localhost:5000/api/email-config?user_id=${userId}`);
         if (response.ok) {
           const config = await response.json();
           setExistingEmailConfig(config);
@@ -47,7 +47,7 @@ const StartMonitoring = () => {
     };
 
     checkEmailConfig();
-  }, []);
+  }, [userId]);
 
   const platforms = [
     { id: "gmail", name: "Gmail", icon: Mail, description: "Connect your Gmail support inbox" },
