@@ -36,7 +36,7 @@ const InteractiveEmotionChart = () => {
       setError(null);
       console.log('🔄 Starting live monitoring with fresh data...');
 
-      const response = await fetch('http://localhost:5000/api/start-live-monitoring', {
+      const response = await fetch('https://customer-sentiment.vercel.app//api/start-live-monitoring', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -69,7 +69,7 @@ const InteractiveEmotionChart = () => {
   // Function to fetch real emotion trends data from backend
   const fetchEmotionTrends = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/emotion-trends');
+      const response = await fetch('https://customer-sentiment.vercel.app//api/emotion-trends');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -150,7 +150,7 @@ const InteractiveEmotionChart = () => {
 
       console.log('🔄 Resetting all emotion data...');
 
-      const response = await fetch('http://localhost:5000/api/reset-emotion-data', {
+      const response = await fetch('https://customer-sentiment.vercel.app//api/reset-emotion-data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: userId }),

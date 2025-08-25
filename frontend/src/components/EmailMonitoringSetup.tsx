@@ -78,7 +78,7 @@ const EmailMonitoringSetup = ({ onConfigSaved, existingConfig }: EmailMonitoring
     try {
       console.log("Sending request to backend...");
 
-      const response = await fetch('http://localhost:5000/api/email-config', {
+      const response = await fetch('https://customer-sentiment.vercel.app//api/email-config', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

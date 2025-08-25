@@ -31,7 +31,7 @@ export default function Chat() {
     const newMessage: ChatMessage = { user: "User", message: chatMessage };
 
     try {
-      await fetch("http://localhost:5000/api/chat", {
+      await fetch("https://customer-sentiment.vercel.app//api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newMessage),
@@ -51,7 +51,7 @@ export default function Chat() {
     if (!ticket.subject || !ticket.description) return;
 
     try {
-      await fetch("http://localhost:5000/api/ticket", {
+      await fetch("https://customer-sentiment.vercel.app//api/ticket", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(ticket),
