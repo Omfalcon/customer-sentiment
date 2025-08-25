@@ -28,7 +28,7 @@ const Dashboard = () => {
     const fetchDashboardData = async () => {
       try {
         // Fetch emotion overview
-        const emotionResponse = await fetch('https://customer-sentiment-te99.onrender.com//api/emotion-overview');
+        const emotionResponse = await fetch('https://customer-sentiment-te99.onrender.com/api/emotion-overview');
         if (emotionResponse.ok) {
           const emotionJson = await emotionResponse.json();
 
@@ -78,7 +78,7 @@ const Dashboard = () => {
         }
 
         // Fetch email configuration
-        const configResponse = await fetch(`https://customer-sentiment-te99.onrender.com//api/email-config?user_id=${userId}`);
+        const configResponse = await fetch(`https://customer-sentiment-te99.onrender.com/api/email-config?user_id=${userId}`);
         if (configResponse.ok) {
           const configJson = await configResponse.json();
           setEmailConfig(configJson);

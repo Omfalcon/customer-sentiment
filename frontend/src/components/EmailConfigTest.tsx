@@ -20,7 +20,7 @@ const EmailConfigTest = () => {
     try {
       console.log('Sending request with config:', config);
       
-      const response = await fetch('https://customer-sentiment-te99.onrender.com//api/email-config', {
+      const response = await fetch('https://customer-sentiment-te99.onrender.com/api/email-config', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const EmailConfigTest = () => {
 
   const testGet = async () => {
     try {
-      const response = await fetch('https://customer-sentiment-te99.onrender.com//api/email-config');
+      const response = await fetch('https://customer-sentiment-te99.onrender.com/api/email-config');
       const data = await response.json();
       setResult('GET result: ' + JSON.stringify(data));
     } catch (error) {
