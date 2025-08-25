@@ -31,7 +31,7 @@ export default function Chat() {
     const newMessage: ChatMessage = { user: "User", message: chatMessage };
 
     try {
-      await fetch("https://customer-sentiment-te99.onrender.com//api/chat", {
+      await fetch("https://customer-sentiment-te99.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newMessage),
@@ -51,7 +51,7 @@ export default function Chat() {
     if (!ticket.subject || !ticket.description) return;
 
     try {
-      await fetch("https://customer-sentiment-te99.onrender.com//api/ticket", {
+      await fetch("https://customer-sentiment-te99.onrender.com/api/ticket", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(ticket),
