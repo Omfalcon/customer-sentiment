@@ -63,4 +63,4 @@ const SentimentAnalyzer: React.FC = () => {
   );
 };
 
-export default SentimentAnalyzer; 
+export default SentimentAnalyzer;

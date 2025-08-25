@@ -2,7 +2,7 @@
 import google.generativeai as genai
 import re
 
-genai.configure(api_key="AIzaSyDO211nXEslFghGgF0i3NpEgca_b02Gqks")
+genai.configure(api_key="AIzaSyDEDaaFdyyJkRFXOVkLnIObAOr97WGGMtE")
 
 def classify_emotion_with_gemini(text):
     """
@@ -16,16 +16,29 @@ def classify_emotion_with_gemini(text):
         response = model.generate_content(prompt)
         emotion = response.text.strip().lower()
         
+        print(f"🔍 Gemini raw response: '{response.text}'")
+        print(f"🔍 Processed emotion: '{emotion}'")
+        
         # Clean up the response (remove any extra text)
         emotion_words = ['angry', 'frustrated', 'happy', 'grateful', 'confused', 'uncertain', 'neutral', 'joy', 'thrilled', 'delighted', 'upset', 'disgusted', 'irritated', 'furious', 'puzzled', 'bewildered']
+        
+        # First try exact match
+        for word in emotion_words:
+            if word == emotion:
+                print(f"✅ Exact match found: {word}")
+                return word
+        
+        # Then try partial match (in case Gemini added extra text)
         for word in emotion_words:
             if word in emotion:
+                print(f"✅ Partial match found: {word} in '{emotion}'")
                 return word
                 
-        return emotion if emotion else 'neutral'
+        print(f"⚠️ No emotion word found in response, returning neutral")
+        return 'neutral'
         
     except Exception as e:
-        print(f"Gemini API error: {e}")
+        print(f"❌ Gemini API error: {e}")
         # Fallback to keyword-based classification
         return classify_emotion_by_keywords(text)
 
@@ -34,6 +47,7 @@ def classify_emotion_by_keywords(text):
     Fallback keyword-based emotion classification when Gemini API is unavailable
     """
     text_lower = text.lower()
+    print(f"🔍 Fallback classifier analyzing: '{text}'")
     
     # Negative/Angry keywords
     angry_keywords = [
@@ -60,12 +74,18 @@ def classify_emotion_by_keywords(text):
     happy_score = sum(1 for keyword in happy_keywords if keyword in text_lower)
     confused_score = sum(1 for keyword in confused_keywords if keyword in text_lower)
     
-    # Determine emotion based on highest score
-    if angry_score > 0 and angry_score >= happy_score and angry_score >= confused_score:
-        return 'angry'
-    elif happy_score > 0 and happy_score >= confused_score:
+    print(f"📊 Keyword scores - Angry: {angry_score}, Happy: {happy_score}, Confused: {confused_score}")
+    
+    # Determine emotion based on highest score (FIXED LOGIC)
+    if happy_score > 0 and happy_score >= angry_score and happy_score >= confused_score:
+        print(f"✅ Classified as: happy")
         return 'happy'
+    elif angry_score > 0 and angry_score >= confused_score:
+        print(f"✅ Classified as: angry")
+        return 'angry'
     elif confused_score > 0:
+        print(f"✅ Classified as: confused")
         return 'confused'
     else:
+        print(f"✅ Classified as: neutral")
         return 'neutral'

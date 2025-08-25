@@ -25,15 +25,15 @@ const LiveSentimentDemo = () => {
   });
 
   const sampleMessages = [
-    { customer: "Anjali J.", message: "This service is absolutely terrible! I've been waiting for hours!", emotion: "negative", severity: "high" },
-    { customer: "Rohan C.", message: "Thanks for the quick response, really appreciate it!", emotion: "positive", severity: "low" },
-    { customer: "Priya D.", message: "I'm confused about how this works, can you help?", emotion: "neutral", severity: "medium" },
-    { customer: "Sanjay B.", message: "I'm getting really frustrated with these constant errors!", emotion: "negative", severity: "high" },
-    { customer: "Kavya M.", message: "Great product, exactly what I needed!", emotion: "positive", severity: "low" },
-    { customer: "Vikram R.", message: "Is there a way to change my subscription?", emotion: "neutral", severity: "low" },
-    { customer: "Neha K.", message: "This is the worst experience I've ever had!", emotion: "negative", severity: "high" },
-    { customer: "Rajesh L.", message: "Outstanding customer service, thank you!", emotion: "positive", severity: "low" },
-  ];
+  { customer: "Anjali J.", message: "This service is absolutely terrible! I've been waiting for hours!", emotion: "negative", severity: "high" },
+  { customer: "Rohan C.", message: "Thanks for the quick response, really appreciate it!", emotion: "positive", severity: "low" },
+  { customer: "Priya D.", message: "I'm confused about how this works, can you help?", emotion: "neutral", severity: "medium" },
+  { customer: "Sanjay B.", message: "I'm getting really frustrated with these constant errors!", emotion: "negative", severity: "high" },
+  { customer: "Kavya M.", message: "Great product, exactly what I needed!", emotion: "positive", severity: "low" },
+  { customer: "Vikram R.", message: "Is there a way to change my subscription?", emotion: "neutral", severity: "low" },
+  { customer: "Neha K.", message: "This is the worst experience I've ever had!", emotion: "negative", severity: "high" },
+  { customer: "Rajesh L.", message: "Outstanding customer service, thank you!", emotion: "positive", severity: "low" },
+];
 
   useEffect(() => {
     let interval;
@@ -185,7 +185,7 @@ const LiveSentimentDemo = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-10px) rotate(1deg); }
