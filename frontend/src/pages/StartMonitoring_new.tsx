@@ -32,7 +32,7 @@ const StartMonitoring = () => {
   useEffect(() => {
     const checkEmailConfig = async () => {
       try {
-        const response = await fetch(`https://customer-sentiment.vercel.app//api/email-config?user_id=${userId}`);
+        const response = await fetch(`https://customer-sentiment-te99.onrender.com//api/email-config?user_id=${userId}`);
         if (response.ok) {
           const config = await response.json();
           setExistingEmailConfig(config);
@@ -83,7 +83,7 @@ const StartMonitoring = () => {
     try {
       // If Gmail is selected and configured, start monitoring
       if (selectedPlatforms.includes("gmail") && emailConfigured) {
-        const response = await fetch('https://customer-sentiment.vercel.app//api/start-live-monitoring', {
+        const response = await fetch('https://customer-sentiment-te99.onrender.com//api/start-live-monitoring', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ 

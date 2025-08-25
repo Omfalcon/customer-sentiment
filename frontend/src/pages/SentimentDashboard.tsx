@@ -4,7 +4,7 @@ import { AlertTriangle, CheckCircle, TrendingUp } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Button } from "@/components/ui/button";
 
-const API_BASE = 'https://customer-sentiment.vercel.app/';
+const API_BASE = 'https://customer-sentiment-te99.onrender.com';
 
 interface OverviewItem {
     count: number;

@@ -16,7 +16,7 @@ const GmailSetup = () => {
   useEffect(() => {
     const checkEmailConfig = async () => {
       try {
-        const response = await fetch(`https://customer-sentiment.vercel.app//api/email-config?user_id=${userId}`);
+        const response = await fetch(`https://customer-sentiment-te99.onrender.com/api/email-config?user_id=${userId}`);
         if (response.ok) {
           const config = await response.json();
           setExistingConfig(config);
