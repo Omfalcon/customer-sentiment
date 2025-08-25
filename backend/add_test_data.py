@@ -44,7 +44,7 @@ def add_sample_messages():
             "emotion": sample["emotion"],
             "sentiment": sample["emotion"],
             "user_id": "test_user",
-            "email_account": "aashishbhandari272@gmail.com",
+            "email_account": "black.falcon.x.69@gmail.com",
             "priority": "high" if sample["emotion"] == "angry" else "medium" if sample["emotion"] == "confusion" else "low"
         }
         

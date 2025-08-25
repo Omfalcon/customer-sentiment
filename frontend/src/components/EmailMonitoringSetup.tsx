@@ -215,13 +215,6 @@ const EmailMonitoringSetup = ({ onConfigSaved, existingConfig }: EmailMonitoring
           </div>
         </div>
 
-        {/* Security Notice */}
-        <Alert className="bg-blue-900/20 border-blue-800 text-blue-300">
-          <Shield className="h-5 w-5 text-blue-400" />
-          <AlertDescription className="text-blue-400">
-            Your credentials are securely encrypted and stored. We only use them to monitor your specified email account.
-          </AlertDescription>
-        </Alert>
 
         {/* Submit Button */}
         <div className="pt-2">

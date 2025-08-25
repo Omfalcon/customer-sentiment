@@ -5,6 +5,10 @@ import os
 from database import get_database_manager
 from gemini_emotion_classifier import classify_emotion_with_gemini
 from dotenv import load_dotenv
+from chat_ticket_routes import chat_ticket_bp
+from historical_sentiment_routes import historical_sentiment_bp
+
+
 
 # Load environment variables
 load_dotenv()
@@ -13,6 +17,8 @@ app = Flask(__name__)
 
 # Enable CORS for all routes
 CORS(app, origins=["*"], methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"])
+app.register_blueprint(chat_ticket_bp)
+app.register_blueprint(historical_sentiment_bp)
 
 # Initialize database manager
 try:
