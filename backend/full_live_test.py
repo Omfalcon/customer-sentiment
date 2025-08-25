@@ -104,21 +104,21 @@ TEST_MESSAGES = {
 
 # Realistic customer names and emails
 CUSTOMERS = [
-    ("Alice Johnson", "alice.johnson@email.com"),
-    ("Bob Smith", "bob.smith@email.com"),
-    ("Carol Davis", "carol.davis@email.com"),
-    ("David Wilson", "david.wilson@email.com"),
-    ("Emma Brown", "emma.brown@email.com"),
-    ("Frank Miller", "frank.miller@email.com"),
-    ("Grace Taylor", "grace.taylor@email.com"),
-    ("Henry Anderson", "henry.anderson@email.com"),
-    ("Iris Clark", "iris.clark@email.com"),
-    ("Jack Thompson", "jack.thompson@email.com"),
-    ("Kate Williams", "kate.williams@email.com"),
-    ("Liam Garcia", "liam.garcia@email.com"),
-    ("Mia Rodriguez", "mia.rodriguez@email.com"),
-    ("Noah Martinez", "noah.martinez@email.com"),
-    ("Olivia Jones", "olivia.jones@email.com"),
+    ("Aarav Patel", "aarav.patel@email.com"),
+    ("Aditi Sharma", "aditi.sharma@email.com"),
+    ("Arjun Kumar", "arjun.kumar@email.com"),
+    ("Divya Singh", "divya.singh@email.com"),
+    ("Ishaan Gupta", "ishaan.gupta@email.com"),
+    ("Kavya Reddy", "kavya.reddy@email.com"),
+    ("Mohit Agarwal", "mohit.agarwal@email.com"),
+    ("Neha Desai", "neha.desai@email.com"),
+    ("Rahul Mehta", "rahul.mehta@email.com"),
+    ("Priya Joshi", "priya.joshi@email.com"),
+    ("Rohan Malhotra", "rohan.malhotra@email.com"),
+    ("Sanjana Iyer", "sanjana.iyer@email.com"),
+    ("Vikram Choudhury", "vikram.choudhury@email.com"),
+    ("Ananya Kapoor", "ananya.kapoor@email.com"),
+    ("Siddharth Rao", "siddharth.rao@email.com"),
 ]
 
 class LiveDashboardTest:

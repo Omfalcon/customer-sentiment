@@ -150,7 +150,7 @@ def main():
                 print("⚠️ No new emails were processed (this might be normal if no unread emails)")
     
     print(f"\n💡 RECOMMENDATIONS:")
-    print("1. Make sure you have unread emails in aashishbhandari272@gmail.com")
+    print("1. Make sure you have unread emails in black.falcon.x.69@gmail.com")
     print("2. Check that Gmail App Password is correct")
     print("3. Verify IMAP is enabled for the Gmail account")
     print("4. Try clicking 'Start Live' button in the dashboard")

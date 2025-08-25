@@ -53,7 +53,7 @@ except Exception as e:
 # Test 4: Email Configuration Test
 print("\n📋 TEST 4: Email Configuration Test")
 email_config = {
-    'email': 'aashishbhandari272@gmail.com',
+    'email': 'black.falcon.x.69@gmail.com',
     'password': 'your_app_password_here',  # You need to replace this
     'userId': 'test_user'
 }
