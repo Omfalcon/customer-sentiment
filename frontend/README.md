@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/1d895c30-51da-4c0a-b1f8-d29527400b7d
+**URL**: https://customer-sentiment.vercel.app/
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1d895c30-51da-4c0a-b1f8-d29527400b7d) and start prompting.
+Simply visit the [Lovable Project](https://customer-sentiment.vercel.app/) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -60,14 +60,3 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1d895c30-51da-4c0a-b1f8-d29527400b7d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
