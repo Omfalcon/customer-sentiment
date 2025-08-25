@@ -62,7 +62,7 @@ const Dashboard = () => {
         }
 
         // Fetch recent negative sentiment messages for tickets
-        const ticketsResponse = await fetch('https://customer-sentiment-te99.onrender.com//alerts?limit=3');
+        const ticketsResponse = await fetch('https://customer-sentiment-te99.onrender.com/alerts?limit=3');
         if (ticketsResponse.ok) {
           const ticketsJson = await ticketsResponse.json();
           if (ticketsJson.messages && Array.isArray(ticketsJson.messages)) {
