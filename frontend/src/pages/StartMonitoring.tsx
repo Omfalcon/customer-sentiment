@@ -67,10 +67,17 @@ const StartMonitoring = () => {
     if (platformId === "gmail") {
       // Always navigate to Gmail setup page when Gmail is clicked
       navigate("/gmail-setup");
+    }if (platformId === "Drift") {
+      // Always navigate to Gmail setup page when Gmail is clicked
+      navigate("/chatdashboard");
+    }if (platformId === "zendesk") {
+      // Always navigate to Gmail setup page when Gmail is clicked
+      navigate("/chatdashboard");
     } else {
       handlePlatformToggle(platformId);
     }
   };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
